@@ -8,7 +8,7 @@ from keras.applications.vgg16 import preprocess_input
 from keras.models import Model
 from keras.models import load_model
 from keras import backend as K
-from os import remove
+#from os import remove
 
 from flask import *  
 app = Flask(__name__)
@@ -93,7 +93,7 @@ def success():
     	f = request.files['file']
     	f.save(f.filename)  
     	result = prediction((f.filename))
-    	remove(f.filename)
+    	#remove(f.filename)
     	return render_template("success.html", name = result)
         
 		
